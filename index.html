@@ -4,60 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <title>Lelukaverit</title>
-    <!-- Favicon -->
-    <link rel="icon" href="res/logo.png" type="image/jpeg">
+    <link rel="icon" href="res/logo.png" type="image/png">
     <style>
-        body {
-            background-color: #ADD8E6;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
+        * {
+            box-sizing: border-box;
         }
 
-        header {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #ADD8E6;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .main-image {
+            max-width: 40%;
+            height: auto;
+            margin-top: 40px;
         }
 
         .youtube-logo {
-            width: 400px;
-            max-width: 90%;
+            max-width: 40%;
             height: auto;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 20px;
+        }
+
+        a.youtube-link {
+            display: block;
+            width: 100%;
+            text-align: center;
         }
 
         .youtube-logo:hover {
             transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .main img {
-            max-width: 100%;
-            height: auto;
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            color: cadetblue;
+            user-select: none;
+            cursor: default;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+
+            .main-image,
+            .youtube-logo {
+                max-width: 80%;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- YouTube logo at top, fixed and centered -->
-    <header>
-        <a href="https://www.youtube.com/@lelukaverit" target="_blank">
-            <img src="res/youtube-logo.png" alt="YouTube Kanava" class="youtube-logo">
-        </a>
-    </header>
 
-    <!-- Centered main image -->
-    <div class="main">
-        <img src="res/logo.png" alt="Lelukaverit">
-    </div>
+    <!-- Top image (main logo) -->
+    <img src="res/logo.png" alt="Lelukaverit" class="main-image">
+
+    <!-- YouTube logo below -->
+    <a href="https://www.youtube.com/@lelukaverit" target="_blank" title="Siirry YouTube-kanavalle"
+        class="youtube-link">
+        <img src="res/youtube-logo.png" alt="YouTube Kanava" class="youtube-logo">
+    </a>
+
+    <!-- Footer at bottom -->
+    <footer>
+        © 2025 Lelukaverit. All rights reserved.
+    </footer>
+
 </body>
 
 </html>
